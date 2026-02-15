@@ -399,18 +399,19 @@
                 </div>
 
                 <div class="bento-card card-padding-compact">
-                    <form class="form form-compact" onsubmit="return fakeSubmit(event)">
-                        <input placeholder="Full Name"
+                    <form class="form form-compact" action="https://formspree.io/f/mbdaowaw" method="POST">
+                        <input type="text" name="name" placeholder="Full Name"
                             style="background: transparent; border-bottom: 1px solid var(--border); border-top:none; border-left:none; border-right:none; border-radius:0; padding: 0.75rem 0; font-size: 0.9rem;"
                             required />
-                        <input type="email" placeholder="Email"
+                        <input type="email" name="email" placeholder="Email"
                             style="background: transparent; border-bottom: 1px solid var(--border); border-top:none; border-left:none; border-right:none; border-radius:0; padding: 0.75rem 0; font-size: 0.9rem;"
                             required />
-                        <textarea placeholder="Tell us about your research..."
+                        <textarea name="message" placeholder="Tell us about your research..."
                             style="background: transparent; border-bottom: 1px solid var(--border); border-top:none; border-left:none; border-right:none; border-radius:0; padding: 0.75rem 0; font-size: 0.9rem; min-height: 100px; resize: none;"
                             required></textarea>
 
-                        <div id="formStatus" style="font-size: 0.8rem; margin-top: 0.5rem;"></div>
+                        <input type="hidden" name="_subject" value="New DARE Lab Membership Application">
+                        <input type="hidden" name="_next" value="https://dareaviation-cmyk.github.io/dare-lab/">
 
                         <button class="btn primary" type="submit" style="width: 100%;">Submit Membership
                             Interest</button>
