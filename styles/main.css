@@ -167,21 +167,21 @@ a:hover {
 }
 
 .card-accent {
-    background: var(--accent);
-    color: white;
+    background: var(--accent) !important;
+    color: white !important;
 }
 
 .card-accent .label {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.7) !important;
 }
 
 .card-accent h3 {
-    color: white;
+    color: white !important;
     margin-bottom: var(--space-4);
 }
 
 .card-accent p {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.9) !important;
     font-size: 0.95rem;
 }
 
@@ -650,6 +650,16 @@ section {
 }
 
 @media (max-width: 768px) {
+
+    /* Prevent horizontal scroll */
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: calc(100% - 32px);
+    }
+
     .nav-pill {
         width: calc(100% - 32px);
         justify-content: space-between;
@@ -666,21 +676,100 @@ section {
         display: block;
     }
 
-    /* Mobile drawer needed */
+    /* Typography adjustments */
+    .hero h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    /* Grid layouts */
     .grid-2,
     .grid-3,
     .grid-4,
     .dual-deck {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
-    .section-title h2 {
-        font-size: 2.5rem;
+    .bento-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
+    .bento-card {
+        padding: 1.5rem;
+    }
+
+    /* Cards */
     .profile {
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+
+    /* Spacing optimization */
+    section {
+        padding: 3rem 0;
+    }
+
+    .hero {
+        padding: 6rem 0 4rem 0;
+    }
+
+    /* Footer */
+    .footer-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .footer-flex .menu {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    /* Form improvements */
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Touch target sizes */
+    .menu-btn {
+        min-width: 44px;
+        min-height: 44px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.75rem;
+    }
+
+    .bento-card {
+        padding: 1.25rem;
+    }
+
+    section {
+        padding: 2.5rem 0;
     }
 }
