@@ -75,6 +75,35 @@ document.addEventListener('DOMContentLoaded', () => {
         return false;
     };
 
+    // Membership Form Consent Validation
+    const consentCheckbox = document.querySelector('input[name="agree_policies"]');
+    const submitBtn = document.querySelector('form[action*="formspree"] button[type="submit"]');
+
+    if (consentCheckbox && submitBtn) {
+        // Set custom English validation message
+        consentCheckbox.setCustomValidity("Please check this box to proceed.");
+
+        // Initially disable submit button
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = "0.5";
+        submitBtn.style.cursor = "not-allowed";
+
+        // Enable/disable based on checkbox state
+        consentCheckbox.addEventListener('change', () => {
+            if (consentCheckbox.checked) {
+                consentCheckbox.setCustomValidity(""); // Clear when checked
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = "1";
+                submitBtn.style.cursor = "pointer";
+            } else {
+                consentCheckbox.setCustomValidity("Please check this box to proceed.");
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = "0.5";
+                submitBtn.style.cursor = "not-allowed";
+            }
+        });
+    }
+
     // Scroll Reveal Animation
     const revealCallback = (entries, observer) => {
         entries.forEach(entry => {
