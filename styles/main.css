@@ -705,6 +705,11 @@ section {
         gap: 1rem;
     }
 
+    /* Override for inline 5-column grid */
+    [style*="grid-template-columns: repeat(5"] {
+        grid-template-columns: 1fr !important;
+    }
+
     .bento-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
