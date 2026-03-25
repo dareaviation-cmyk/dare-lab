@@ -515,7 +515,7 @@ a:hover {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    margin-bottom: 0.75rem;
+    margin-top: auto;
     width: fit-content;
 }
 
@@ -524,6 +524,16 @@ a:hover {
     color: #10b981;
     border: 1px solid rgba(16, 185, 129, 0.2);
     box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
+}
+
+.card-wip {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.02), rgba(16, 185, 129, 0.06)) !important;
+    border-color: rgba(16, 185, 129, 0.12) !important;
+}
+
+.card-wip:hover {
+    border-color: rgba(16, 185, 129, 0.25) !important;
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.08) !important;
 }
 
 .scholar-link:hover {
