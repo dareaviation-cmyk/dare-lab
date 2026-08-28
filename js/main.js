@@ -54,6 +54,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Latest updates carousel
+    const updatesCarousel = document.querySelector('.updates-carousel');
+    if (updatesCarousel) {
+        document.querySelectorAll('[data-updates-direction]').forEach(button => {
+            button.addEventListener('click', () => {
+                const direction = button.dataset.updatesDirection === 'next' ? 1 : -1;
+                const firstCard = updatesCarousel.querySelector('.bento-card');
+                const scrollAmount = firstCard ? firstCard.getBoundingClientRect().width + 24 : 320;
+                updatesCarousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+            });
+        });
+    }
+
     // Form Handling (Demo)
     window.fakeSubmit = (e) => {
         e.preventDefault();
