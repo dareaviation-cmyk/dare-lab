@@ -375,30 +375,28 @@
     <!-- Latest Updates / News -->
     <section id="updates">
         <div class="container">
-            <div class="section-title updates-section-title">
+            <div class="section-title">
                 <h2>Latest Updates</h2>
-                <div class="updates-heading-actions">
-                    <div class="label">News & Announcements</div>
-                    <div class="updates-controls" aria-label="Update navigation">
-                        <button class="updates-arrow" type="button" data-updates-direction="previous" aria-label="Previous updates">←</button>
-                        <button class="updates-arrow" type="button" data-updates-direction="next" aria-label="Next updates">→</button>
-                    </div>
-                </div>
+                <div class="label">News & Announcements</div>
             </div>
 
-            <div class="updates-carousel" aria-label="Latest DARE Lab updates" tabindex="0">
-                <div class="bento-card updates-post-card" style="padding: 0; overflow: hidden; background: #fff;">
-                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7479067808887177217" height="550" width="100%" frameborder="0" allowfullscreen="" title="Embedded post" style="display: block;"></iframe>
+            <div class="updates-slider">
+                <button class="updates-arrow updates-arrow-previous" type="button" data-updates-direction="previous" aria-label="Previous updates">←</button>
+                <div class="updates-grid" aria-label="Latest DARE Lab updates" aria-live="polite">
+                    <div class="bento-card updates-post-card" data-update-card style="padding: 0; overflow: hidden; background: #fff;">
+                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7499180425198792705" height="550" width="100%" frameborder="0" allowfullscreen="" title="Latest DARE Lab LinkedIn post" style="display: block;"></iframe>
+                    </div>
+                    <div class="bento-card updates-post-card" data-update-card style="padding: 0; overflow: hidden; background: #fff;">
+                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7479067808887177217" height="550" width="100%" frameborder="0" allowfullscreen="" title="Embedded post" style="display: block;"></iframe>
+                    </div>
+                    <div class="bento-card updates-post-card" data-update-card style="padding: 0; overflow: hidden; background: #fff;">
+                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7453414189261332480" height="550" width="100%" frameborder="0" allowfullscreen="" title="Embedded post" style="display: block;"></iframe>
+                    </div>
+                    <div class="bento-card updates-post-card" data-update-card style="padding: 0; overflow: hidden; background: #fff;">
+                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7442184438345658368" height="550" width="100%" frameborder="0" allowfullscreen="" title="Embedded post" style="display: block;"></iframe>
+                    </div>
                 </div>
-                <div class="bento-card updates-post-card" style="padding: 0; overflow: hidden; background: #fff;">
-                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7453414189261332480" height="550" width="100%" frameborder="0" allowfullscreen="" title="Embedded post" style="display: block;"></iframe>
-                </div>
-                <div class="bento-card updates-post-card" style="padding: 0; overflow: hidden; background: #fff;">
-                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7442184438345658368" height="550" width="100%" frameborder="0" allowfullscreen="" title="Embedded post" style="display: block;"></iframe>
-                </div>
-                <div class="bento-card updates-post-card" style="padding: 0; overflow: hidden; background: #fff;">
-                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7499180425198792705" height="550" width="100%" frameborder="0" allowfullscreen="" title="Latest DARE Lab LinkedIn post" style="display: block;"></iframe>
-                </div>
+                <button class="updates-arrow updates-arrow-next" type="button" data-updates-direction="next" aria-label="Next updates">→</button>
             </div>
         </div>
     </section>
