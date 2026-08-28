@@ -421,6 +421,12 @@ a:hover {
     gap: var(--grid-gap);
 }
 
+.updates-heading-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 /* Latest updates carousel */
 .updates-controls {
     display: flex;
@@ -454,7 +460,7 @@ a:hover {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    padding: 0.25rem 0 1rem;
+    padding: 0 0 1rem;
     scrollbar-width: none;
 }
 
@@ -469,19 +475,6 @@ a:hover {
 
 .updates-post-card {
     min-height: 550px;
-}
-
-.updates-link-card {
-    min-height: 550px;
-    justify-content: center;
-    text-decoration: none;
-    color: inherit;
-}
-
-.updates-link-cta {
-    margin-top: 1rem;
-    color: var(--accent);
-    font-weight: 700;
 }
 
 .grid-4 {
@@ -793,9 +786,9 @@ section {
         gap: 0.5rem;
     }
 
-    .updates-controls {
-        align-self: flex-end;
-        margin-top: -3rem;
+    .updates-heading-actions {
+        width: 100%;
+        justify-content: space-between;
     }
 
     .updates-carousel > .bento-card {
