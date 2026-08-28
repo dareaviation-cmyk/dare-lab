@@ -469,7 +469,9 @@ a:hover {
 }
 
 .updates-carousel > .bento-card {
-    flex: 0 0 calc((100% - (2 * var(--grid-gap))) / 3);
+    /* Three cards fit in the row; use a concrete calc expression for broad browser support. */
+    flex: 0 0 calc((100% - 3rem) / 3);
+    min-width: 0;
     scroll-snap-align: start;
 }
 
