@@ -421,24 +421,27 @@ a:hover {
     gap: var(--grid-gap);
 }
 
-.updates-heading-actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+/* Latest updates: three fixed cards with edge navigation */
+.updates-slider {
+    position: relative;
 }
 
-/* Latest updates carousel */
-.updates-controls {
-    display: flex;
-    gap: 0.5rem;
+.updates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--grid-gap);
 }
 
 .updates-arrow {
     width: 2.6rem;
     height: 2.6rem;
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    transform: translateY(-50%);
     border: 1px solid var(--border-strong);
     border-radius: 50%;
-    background: transparent;
+    background: var(--bg);
     color: var(--text);
     font: inherit;
     font-size: 1.25rem;
@@ -454,29 +457,33 @@ a:hover {
     outline: none;
 }
 
-.updates-carousel {
-    display: flex;
-    gap: var(--grid-gap);
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    padding: 0 0 1rem;
-    scrollbar-width: none;
+.updates-arrow:disabled {
+    opacity: 0.35;
+    cursor: default;
+    border-color: var(--border);
 }
 
-.updates-carousel::-webkit-scrollbar {
-    display: none;
+.updates-arrow-previous {
+    left: -1.3rem;
 }
 
-.updates-carousel > .bento-card {
-    /* Three cards fit in the row; use a concrete calc expression for broad browser support. */
-    flex: 0 0 calc((100% - 3rem) / 3);
-    min-width: 0;
-    scroll-snap-align: start;
+.updates-arrow-next {
+    right: -1.3rem;
 }
 
 .updates-post-card {
+    width: 100%;
+    min-width: 0;
     min-height: 550px;
+}
+
+.updates-post-card iframe {
+    width: 100%;
+    max-width: 100%;
+}
+
+.updates-post-card[hidden] {
+    display: none !important;
 }
 
 .grid-4 {
@@ -728,8 +735,8 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .updates-carousel > .bento-card {
-        flex-basis: calc((100% - var(--grid-gap)) / 2);
+    .updates-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .grid-4 {
@@ -788,13 +795,16 @@ section {
         gap: 0.5rem;
     }
 
-    .updates-heading-actions {
-        width: 100%;
-        justify-content: space-between;
+    .updates-grid {
+        grid-template-columns: minmax(0, 1fr);
     }
 
-    .updates-carousel > .bento-card {
-        flex-basis: min(86vw, 360px);
+    .updates-arrow-previous {
+        left: -0.75rem;
+    }
+
+    .updates-arrow-next {
+        right: -0.75rem;
     }
 
     /* Grid layouts */
