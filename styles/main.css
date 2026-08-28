@@ -421,6 +421,69 @@ a:hover {
     gap: var(--grid-gap);
 }
 
+/* Latest updates carousel */
+.updates-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.updates-arrow {
+    width: 2.6rem;
+    height: 2.6rem;
+    border: 1px solid var(--border-strong);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.updates-arrow:hover,
+.updates-arrow:focus-visible {
+    background: var(--brand-muted);
+    border-color: var(--accent);
+    outline: none;
+}
+
+.updates-carousel {
+    display: flex;
+    gap: var(--grid-gap);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 0.25rem 0 1rem;
+    scrollbar-width: none;
+}
+
+.updates-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.updates-carousel > .bento-card {
+    flex: 0 0 calc((100% - (2 * var(--grid-gap))) / 3);
+    scroll-snap-align: start;
+}
+
+.updates-post-card {
+    min-height: 550px;
+}
+
+.updates-link-card {
+    min-height: 550px;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.updates-link-cta {
+    margin-top: 1rem;
+    color: var(--accent);
+    font-weight: 700;
+}
+
 .grid-4 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -670,6 +733,10 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .updates-carousel > .bento-card {
+        flex-basis: calc((100% - var(--grid-gap)) / 2);
+    }
+
     .grid-4 {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -724,6 +791,15 @@ section {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
+    }
+
+    .updates-controls {
+        align-self: flex-end;
+        margin-top: -3rem;
+    }
+
+    .updates-carousel > .bento-card {
+        flex-basis: min(86vw, 360px);
     }
 
     /* Grid layouts */
